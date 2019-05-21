@@ -1,0 +1,41 @@
+
+*{
+    background-color:seagreen;
+    text-align: center;
+}
+
+img{
+    background-color: white;
+    border: thick dotted salmon;
+    border-radius: 30px;
+}
+
+h1{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: salmon;
+}
+
+table{
+    display: inline;
+}
+
+td{
+    background-color: mediumseagreen;
+    border: medium solid lightsalmon;
+    padding: 15px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    font-size: 20px;
+    color: lightsalmon;
+}
+
+#hourly{
+    display: inline-block;
+    color: lightsalmon;
+    font-weight: bolder;
+}
+
+#storename{
+    background-color: lightseagreen;
+    text-decoration: underline;
+}
