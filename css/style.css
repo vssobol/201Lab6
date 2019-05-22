@@ -1,41 +1,71 @@
 
+/* Color Palette: https://www.color-hex.com/color-palette/48724 */
+
 *{
-    background-color:seagreen;
+    background-color:#81b4b3;
     text-align: center;
 }
 
 img{
-    background-color: white;
-    border: thick dotted salmon;
-    border-radius: 30px;
+    background-color: #dee7e7;
+    border: .75em double #e15531;
+    padding: 2em;
+    margin: 1em;
+    border-radius: 5em;
 }
 
 h1{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: salmon;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 2em;
+    font-weight: bolder;
+    color: #e15531;
+    margin: 1em;
 }
 
-table{
+hr{
+    width: 60%;
+    border: .1em dotted #c9cdd6;
+}
+
+#hourly{
+    display: inline-block;
+    color: #e15531;
+    font-weight: bolder;
+}
+
+#store, #list{
+    border-radius: 1em;
+    background-color: #a1bfb9;
+    padding: .2em;
+    margin-left: 5em;
+    margin-right: 5em;
+}
+
+#store{
+    text-decoration: underline;
+}
+
+ul{
+    height: 25em;
+    overflow-y: scroll;
+}
+
+#copyright{
+    color: #a1bfb9;
+    margin-right: 2em;
+    float: right;
+}
+
+/* table{
     display: inline;
 }
 
 td{
-    background-color: mediumseagreen;
+    background-color: #a1bfb9;
     border: medium solid lightsalmon;
     padding: 15px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: bolder;
     font-size: 20px;
     color: lightsalmon;
-}
-
-#hourly{
-    display: inline-block;
-    color: lightsalmon;
-    font-weight: bolder;
-}
-
-#storename{
-    background-color: lightseagreen;
-    text-decoration: underline;
-}
+} */
