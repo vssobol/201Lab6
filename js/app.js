@@ -53,14 +53,14 @@ var hourly = document.getElementById('hourly');
 for(var i = 0; i < store.length; i++){ /* for each store */
 
     var newLine = document.createElement('li'); /* start new line */
-    var li = '<p>' + store[i].name + '</p>';
+    var li = '<p id="store">' + store[i].name + '</p>' + '<br>';
 
     for(var j = 0; j < hours.length; j++){ /* for each hour */
 
      /* randomize a number between min and max and store it in cookiesSold for each store */
         store[i].cookiesSold[j] = randomizer(store[i].max, store[i].min);
      /* add a new list item with hour: random number sold */
-        li =  li + '<li>' + hours[j] + ": " + store[i].cookiesSold[j] + " customers" + '</li>';
+        li =  li + '<li id="list">' + hours[j] + ": " + store[i].cookiesSold[j] + " customers" + '</li>';
 
     }
     //console.log(store[i].cookiesSold);
@@ -75,7 +75,7 @@ for(var i = 0; i < store.length; i++){ /* for each store */
 
     }
  /* add a new list item with total cookies */
-    li = li + '<li>' + "Total Cookies Sold: " + totalCookies + '</li>';
+    li = li + '<li id="list">' + "Total Cookies Sold: " + totalCookies + '</li>' + '<br>';
 
     newLine.innerHTML = li;
     hourly.appendChild(newLine);
