@@ -45,32 +45,36 @@ function randomizer(max, min){
     return Math.floor(Math.random() * (max - min + 1) + min);
 };
 
-//for testing randomizer
+//testing randomizer
 //console.log(randomizer(1, 50));
 
 var hourly = document.getElementById('hourly');
 
-for(var i = 0; i < store.length; i++){
+for(var i = 0; i < store.length; i++){ /* for each store */
 
-    var newLine = document.createElement('li');
+    var newLine = document.createElement('li'); /* start new line */
     var li = '<p>' + store[i].name + '</p>';
 
-    for(var j = 0; j < hours.length; j++){
+    for(var j = 0; j < hours.length; j++){ /* for each hour */
 
+     /* randomize a number between min and max and store it in cookiesSold for each store */
         store[i].cookiesSold[j] = randomizer(store[i].max, store[i].min);
+     /* add a new list item with hour: random number sold */
         li =  li + '<li>' + hours[j] + ": " + store[i].cookiesSold[j] + " customers" + '</li>';
 
     }
-    console.log(store[i].cookiesSold);
+    //console.log(store[i].cookiesSold);
 
-    var totalCookies = 0;
-    for(var k = 0; k < store[i].cookiesSold.length; k++){
+    var totalCookies = 0; /* creating variable for total cookies sold */
+    for(var k = 0; k < store[i].cookiesSold.length; k++){ /* for however many items are in the cookiesSold array */
 
-        console.log(totalCookies);
+        //console.log(totalCookies);
+     /* add each value in the array to totalCookies */
         totalCookies = totalCookies + store[i].cookiesSold[k];
-        console.log(totalCookies);
+        //console.log(totalCookies);
 
     }
+ /* add a new list item with total cookies */
     li = li + '<li>' + "Total Cookies Sold: " + totalCookies + '</li>';
 
     newLine.innerHTML = li;
