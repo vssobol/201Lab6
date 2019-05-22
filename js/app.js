@@ -53,7 +53,7 @@ var hourly = document.getElementById('hourly');
 for(var i = 0; i < store.length; i++){
 
     var newLine = document.createElement('li');
-    var li = '<p>' + store[i].name + '</p>'
+    var li = '<p>' + store[i].name + '</p>';
 
     for(var j = 0; j < hours.length; j++){
 
