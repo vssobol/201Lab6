@@ -62,13 +62,18 @@ for(var i = 0; i < store.length; i++){
 
     }
 
-    // for(var k = 0; k < store[0].cookiesSold.length; k++){
+    console.log(store[i].cookiesSold);
 
-    //     var totalCookies = 0;
-    //     totalCookies = totalCookies + store[i].cookiesSold[k];
-    //     li = li + '<li>' + "Total Cookies Sold: " + totalCookies + '</li>';
+    var totalCookies = 0;
+    for(var k = 0; k < store[i].cookiesSold.length; k++){
 
-    // }
+        console.log(totalCookies);
+        totalCookies = totalCookies + store[i].cookiesSold[k];
+        console.log(totalCookies);
+
+    }
+
+    li = li + '<li>' + "Total Cookies Sold: " + totalCookies + '</li>';
 
     newLine.innerHTML = li;
     hourly.appendChild(newLine);
