@@ -61,7 +61,6 @@ for(var i = 0; i < store.length; i++){
         li =  li + '<li>' + hours[j] + ": " + store[i].cookiesSold[j] + " customers" + '</li>';
 
     }
-
     console.log(store[i].cookiesSold);
 
     var totalCookies = 0;
@@ -72,7 +71,6 @@ for(var i = 0; i < store.length; i++){
         console.log(totalCookies);
 
     }
-
     li = li + '<li>' + "Total Cookies Sold: " + totalCookies + '</li>';
 
     newLine.innerHTML = li;
