@@ -82,26 +82,25 @@ for(var i = 0; i < store.length; i++){ /* for each store */
 }
 
 
-// var data = document.getElementById('data');
-// var tr = document.createElement('tr');
+var data = document.getElementById('data');
 
-// for(var i=0; i <= hours.length; i++){
-    
-//     for(var s=0; s < store.length; s++){
-//         var td = document.createElement('td');
-//         td.innerHTML = store[s].name;
-//         tr.appendChild(td);
-//     }
+for(var s = 0; s < store.length; s++){
 
-// //     table.push(
-// //         '<td id="data">' + store[i].name + '</td>' +
-// //         '<td>' + store[i].min + '</td>' +
-// //         '<td>' + store[i].max + '</td>' +
-// //         '<td>' + store[i].avgCookies + '</td>'
-// //     )
-// }
+  var tr = document.createElement('tr');
 
-// // if(store.length > 0){
-// //     document.createElement('/tr');
-// // }
-// data.appendChild(tr);
+  var tdStore = document.createElement('td');
+  var storeLocation = store[0].name;
+  tdStore.innerHTML = storeLocation;
+  tr.appendChild(tdStore);
+
+
+  for(var k = 0; k < store[0].cookiesSold.length; k++){
+
+    var tdHourly = document.createElement('td');
+    var customers = store[0].cookiesSold[k];
+    tdHourly.innerHTML = customers;
+    tr.appendChild(tdHourly);
+
+  }
+}
+data.appendChild(tr);
