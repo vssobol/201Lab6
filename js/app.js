@@ -89,18 +89,18 @@ for(var s = 0; s < store.length; s++){
   var tr = document.createElement('tr');
 
   var tdStore = document.createElement('td');
-  var storeLocation = store[0].name;
+  var storeLocation = store[s].name;
   tdStore.innerHTML = storeLocation;
   tr.appendChild(tdStore);
 
 
-  for(var k = 0; k < store[0].cookiesSold.length; k++){
+    for(var k = 0; k < store[0].cookiesSold.length; k++){
 
-    var tdHourly = document.createElement('td');
-    var customers = store[0].cookiesSold[k];
-    tdHourly.innerHTML = customers;
-    tr.appendChild(tdHourly);
+        var tdHourly = document.createElement('td');
+        var customers = store[s].cookiesSold[k];
+        tdHourly.innerHTML = customers;
+        tr.appendChild(tdHourly);
 
-  }
+    }
+    data.appendChild(tr);
 }
-data.appendChild(tr);
