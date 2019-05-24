@@ -76,32 +76,63 @@ for(var i = 0; i < store.length; i++){ /* for each store */
     }
  /* add a new list item with total cookies */
     li = li + '<li id="list">' + "Total Cookies Sold: " + totalCookies + '</li>' + '<br>';
+    store[i].cookiesSold = store[i].cookiesSold;
+    store[i].total = totalCookies;
 
     newLine.innerHTML = li;
     hourly.appendChild(newLine);
 }
 
 
-// var data = document.getElementById('data');
-// var tr = document.createElement('tr');
+var data = document.getElementById('data');
 
-// for(var i=0; i <= hours.length; i++){
-    
-//     for(var s=0; s < store.length; s++){
-//         var td = document.createElement('td');
-//         td.innerHTML = store[s].name;
-//         tr.appendChild(td);
-//     }
+for(var s = 0; s < store.length; s++){
 
-// //     table.push(
-// //         '<td id="data">' + store[i].name + '</td>' +
-// //         '<td>' + store[i].min + '</td>' +
-// //         '<td>' + store[i].max + '</td>' +
-// //         '<td>' + store[i].avgCookies + '</td>'
-// //     )
-// }
+  var tr = document.createElement('tr');
 
-// // if(store.length > 0){
-// //     document.createElement('/tr');
-// // }
-// data.appendChild(tr);
+  var tdStore = document.createElement('td');
+  var storeLocation = store[s].name;
+  tdStore.innerHTML = storeLocation;
+  tr.appendChild(tdStore);
+
+
+    for(var k = 0; k < store[0].cookiesSold.length; k++){
+
+        var tdHourly = document.createElement('td');
+        var customers = store[s].cookiesSold[k];
+        tdHourly.innerHTML = customers;
+        tr.appendChild(tdHourly);
+
+    }
+
+    var tdTotal = document.createElement('td');
+    var daily = store[s].total;
+    tdTotal.innerHTML = daily;
+    tr.appendChild(tdTotal);
+
+    data.appendChild(tr);
+}
+
+var totals = document.getElementById('totals');
+
+var tr = document.createElement('tr');
+var tdZero = document.createElement('td');
+tdZero.innerHTML = "Totals";
+tr.appendChild(tdZero);
+
+for(var a = 0; a < 1; a++){
+
+    var td = document.createElement('td');
+    var sum = 0;
+
+    for(var h = 0; h < store.length; h++){
+        sum = sum + store[h].cookiesSold[a];
+        //console.log(store[h].cookiesSold[a], sum);
+        td.innerHTML = sum;
+        td.appendChild;
+    }
+}
+
+tr.appendChild(td);
+
+totals.appendChild(tr);
