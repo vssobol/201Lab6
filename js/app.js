@@ -76,6 +76,7 @@ for(var i = 0; i < store.length; i++){ /* for each store */
     }
  /* add a new list item with total cookies */
     li = li + '<li id="list">' + "Total Cookies Sold: " + totalCookies + '</li>' + '<br>';
+    store[i].cookiesSold = store[i].cookiesSold;
     store[i].total = totalCookies;
 
     newLine.innerHTML = li;
@@ -111,3 +112,27 @@ for(var s = 0; s < store.length; s++){
 
     data.appendChild(tr);
 }
+
+var totals = document.getElementById('totals');
+
+var tr = document.createElement('tr');
+var tdZero = document.createElement('td');
+tdZero.innerHTML = "Totals";
+tr.appendChild(tdZero);
+
+for(var a = 0; a < 1; a++){
+
+    var td = document.createElement('td');
+    var sum = 0;
+
+    for(var h = 0; h < store.length; h++){
+        sum = sum + store[h].cookiesSold[a];
+        //console.log(store[h].cookiesSold[a], sum);
+        td.innerHTML = sum;
+        td.appendChild;
+    }
+}
+
+tr.appendChild(td);
+
+totals.appendChild(tr);
