@@ -76,6 +76,7 @@ for(var i = 0; i < store.length; i++){ /* for each store */
     }
  /* add a new list item with total cookies */
     li = li + '<li id="list">' + "Total Cookies Sold: " + totalCookies + '</li>' + '<br>';
+    store[i].total = totalCookies;
 
     newLine.innerHTML = li;
     hourly.appendChild(newLine);
@@ -102,5 +103,11 @@ for(var s = 0; s < store.length; s++){
         tr.appendChild(tdHourly);
 
     }
+
+    var tdTotal = document.createElement('td');
+    var daily = store[s].total;
+    tdTotal.innerHTML = daily;
+    tr.appendChild(tdTotal);
+
     data.appendChild(tr);
 }
