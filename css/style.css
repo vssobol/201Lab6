@@ -88,4 +88,5 @@ tbody td:hover{
     cursor: pointer;
     background-color: #dee7e7;
     color: #e15531;
+    border-radius: 1.2em;
 }
