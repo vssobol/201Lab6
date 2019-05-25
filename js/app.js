@@ -44,9 +44,6 @@ function randomizer(max, min){
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-console.log(store);
-
-
 var hourly = document.getElementById('hourly');
 
 for(var i = 0; i < store.length; i++){ /* for each store */
