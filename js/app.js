@@ -158,13 +158,17 @@ for(var a = 0; a <= hours.length; a++){
 
         if(a === hours.length){
 
-            break;
+            sum = sum + store[h].total;
+            td.innerHTML = sum;
+            td.appendChild;
+
+        } else{
+
+            sum = sum + store[h].cookiesSold[a];
+            td.innerHTML = sum;
+            td.appendChild;
 
         }
-
-        sum = sum + store[h].cookiesSold[a];
-        td.innerHTML = sum;
-        td.appendChild;
     }
 
     tr.appendChild(td);
