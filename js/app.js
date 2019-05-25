@@ -1,5 +1,24 @@
 'use strict';
 
+/*      Event Listener OPEN         */
+
+var form = document.getElementById('newStore');
+form.addEventListener('submit', submitForm);
+
+function submitForm(event){
+    event.preventDefault();
+    if(event.target){
+        console.log('the event.target is ', event.target);
+        console.log('the event.target.name is ', event.target.name);
+        console.log('the event.target.min is ', event.target.min);
+        console.log('the event.target.max is ', event.target.max);
+        console.log('the event.target.average is ', event.target.average);
+    }
+}
+
+/*      Event Listener CLOSE        */
+
+
 var hours = ["6am", "7am", "8am", "9am", "10am", "11am", "12pm",
             "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm", "8pm"];
 
