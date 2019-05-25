@@ -80,9 +80,6 @@ function randomizer(max, min){
     return Math.floor(Math.random() * (max - min + 1) + min);
 };
 
-//testing randomizer
-//console.log(randomizer(1, 50));
-
 var hourly = document.getElementById('hourly');
 
 for(var i = 0; i < store.length; i++){ /* for each store */
@@ -98,15 +95,12 @@ for(var i = 0; i < store.length; i++){ /* for each store */
         li =  li + '<li id="list">' + hours[j] + ": " + store[i].cookiesSold[j] + " customers" + '</li>';
 
     }
-    //console.log(store[i].cookiesSold);
 
     var totalCookies = 0; /* creating variable for total cookies sold */
     for(var k = 0; k < store[i].cookiesSold.length; k++){ /* for however many items are in the cookiesSold array */
 
-        //console.log(totalCookies);
      /* add each value in the array to totalCookies */
         totalCookies = totalCookies + store[i].cookiesSold[k];
-        //console.log(totalCookies);
 
     }
  /* add a new list item with total cookies */
@@ -169,7 +163,6 @@ for(var a = 0; a <= hours.length; a++){
         }
 
         sum = sum + store[h].cookiesSold[a];
-        //console.log(store[h].cookiesSold[a], sum);
         td.innerHTML = sum;
         td.appendChild;
     }
