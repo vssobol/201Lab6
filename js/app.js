@@ -136,12 +136,19 @@ var tdZero = document.createElement('td');
 tdZero.innerHTML = "Totals";
 tr.appendChild(tdZero);
 
-for(var a = 0; a < hours.length; a++){
+for(var a = 0; a <= hours.length; a++){
 
     var td = document.createElement('td');
     var sum = 0;
 
     for(var h = 0; h < store.length; h++){
+
+        if(a === hours.length){
+
+            break;
+
+        }
+
         sum = sum + store[h].cookiesSold[a];
         //console.log(store[h].cookiesSold[a], sum);
         td.innerHTML = sum;
@@ -149,7 +156,7 @@ for(var a = 0; a < hours.length; a++){
     }
 
     tr.appendChild(td);
-    
+
 }
 
 totals.appendChild(tr);
