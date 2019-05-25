@@ -22,63 +22,30 @@ function submitForm(event){
 var hours = ["6am", "7am", "8am", "9am", "10am", "11am", "12pm",
             "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm", "8pm"];
 
+var store = [];
 
-// function cookieStore(name,min,max,avgCookies){
-//     this.name = name;
-//     this.min = min;
-//     this.max = max;
-//     this.avgCookies = avgCookies;
-// }
+function cookieStore(name,min,max,avgCookies){
+    this.name = name;
+    this.min = min;
+    this.max = max;
+    this.avgCookies = avgCookies;
+    this.cookiesSold = [];
+    this.total;
+    store.push(this);
+}
 
-// var pike = cookieStore("1st and Pike", 23, 65, 6.3);
-// var seatac = cookieStore("Seatac Airport", 3, 24, 1.2);
-// var seattle = cookieStore("Seattle Center", 11, 38, 3.7);
-// var capitol = cookieStore("Capitol Hill", 20, 38, 2.3);
-// var alki = cookieStore("Alki", 2, 16, 4.6);
-
-// cookieStore.prototype.avgCookies = [];
-
-var store = [
-    {
-        name: "1st and Pike",
-        min: 23,
-        max: 65,
-        avgCookies: 6.3,
-        cookiesSold: [],
-    },
-    {
-        name: "Seatac Airport",
-        min: 3,
-        max: 24,
-        avgCookies: 1.2,
-        cookiesSold: [],
-    },
-    {
-        name: "Seattle Center",
-        min: 11,
-        max: 38,
-        avgCookies: 3.7,
-        cookiesSold: [],
-    },
-    {
-        name: "Capitol Hill",
-        min: 20,
-        max: 38,
-        avgCookies: 2.3,
-        cookiesSold: [],
-    },
-    {
-        name: "Alki",
-        min: 2,
-        max: 16,
-        avgCookies: 4.6,
-        cookiesSold: [],
-    }
-]
+var pike = new cookieStore("1st and Pike", 23, 65, 6.3);
+var seatac = new cookieStore("Seatac Airport", 3, 24, 1.2);
+var seattle = new cookieStore("Seattle Center", 11, 38, 3.7);
+var capitol = new cookieStore("Capitol Hill", 20, 38, 2.3);
+var alki = new cookieStore("Alki", 2, 16, 4.6);
 
 function randomizer(max, min){
     return Math.floor(Math.random() * (max - min + 1) + min);
-};
+}
+
+console.log(store);
+
 
 var hourly = document.getElementById('hourly');
 
@@ -105,7 +72,6 @@ for(var i = 0; i < store.length; i++){ /* for each store */
     }
  /* add a new list item with total cookies */
     li = li + '<li id="list">' + "Total Cookies Sold: " + totalCookies + '</li>' + '<br>';
-    store[i].cookiesSold = store[i].cookiesSold;
     store[i].total = totalCookies;
 
     newLine.innerHTML = li;
@@ -125,7 +91,7 @@ for(var s = 0; s < store.length; s++){
   tr.appendChild(tdStore);
 
 
-    for(var k = 0; k < store[0].cookiesSold.length; k++){
+    for(var k = 0; k < store[s].cookiesSold.length; k++){
 
         var tdHourly = document.createElement('td');
         var customers = store[s].cookiesSold[k];
