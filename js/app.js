@@ -136,7 +136,7 @@ var tdZero = document.createElement('td');
 tdZero.innerHTML = "Totals";
 tr.appendChild(tdZero);
 
-for(var a = 0; a < 1; a++){
+for(var a = 0; a < hours.length; a++){
 
     var td = document.createElement('td');
     var sum = 0;
@@ -147,8 +147,9 @@ for(var a = 0; a < 1; a++){
         td.innerHTML = sum;
         td.appendChild;
     }
-}
 
-tr.appendChild(td);
+    tr.appendChild(td);
+    
+}
 
 totals.appendChild(tr);
