@@ -3,6 +3,22 @@
 var hours = ["6am", "7am", "8am", "9am", "10am", "11am", "12pm",
             "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm", "8pm"];
 
+
+// function cookieStore(name,min,max,avgCookies){
+//     this.name = name;
+//     this.min = min;
+//     this.max = max;
+//     this.avgCookies = avgCookies;
+// }
+
+// var pike = cookieStore("1st and Pike", 23, 65, 6.3);
+// var seatac = cookieStore("Seatac Airport", 3, 24, 1.2);
+// var seattle = cookieStore("Seattle Center", 11, 38, 3.7);
+// var capitol = cookieStore("Capitol Hill", 20, 38, 2.3);
+// var alki = cookieStore("Alki", 2, 16, 4.6);
+
+// cookieStore.prototype.avgCookies = [];
+
 var store = [
     {
         name: "1st and Pike",
