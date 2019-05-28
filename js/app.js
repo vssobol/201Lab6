@@ -4,19 +4,20 @@
 
 var form = document.getElementById('newStore');
 form.addEventListener('submit', submitForm);
+var newStore = [];
 
 function submitForm(form){
-    form.preventDefault();
-    if(form.target){
+    event.preventDefault();
 
-        var newStore = new cookieStore(form.target.name, form.target.min, form.target.max, form.target.average);
+    newStore = [event.target.name.value, event.target.min.value, event.target.max.value, event.target.average.value];
 
-        // console.log('the form.target is ', form.target);
-        // console.log('the form.target.name is ', form.target.name);
-        // console.log('the form.target.min is ', form.target.min);
-        // console.log('the form.target.max is ', form.target.max);
-        // console.log('the form.target.average is ', form.target.average);
-    }
+    console.log(newStore);
+    console.log(store);
+    event.target.name.value = null;
+    event.target.min.value = null;
+    event.target.max.value = null;
+    event.target.average.value = null;
+    
 }
 
 /*      Event Listener CLOSE        */
@@ -42,9 +43,10 @@ var seatac = new cookieStore("Seatac Airport", 3, 24, 1.2);
 var seattle = new cookieStore("Seattle Center", 11, 38, 3.7);
 var capitol = new cookieStore("Capitol Hill", 20, 38, 2.3);
 var alki = new cookieStore("Alki", 2, 16, 4.6);
+newStore = new cookieStore(newStore[0], newStore[1], newStore[2], newStore[3]);
 
-function randomizer(max, min){
-    return Math.floor(Math.random() * (max - min + 1) + min);
+function randomizer(max, min, avgCookies){
+    return Math.ceil((Math.random() * (max - min + 1) + min) * avgCookies);
 }
 
 var hourly = document.getElementById('hourly');
@@ -56,9 +58,9 @@ for(var i = 0; i < store.length; i++){ /* for each store */
 
     for(var j = 0; j < hours.length; j++){ /* for each hour */
 
-     /* randomize a number between min and max and store it in cookiesSold for each store */
-        store[i].cookiesSold[j] = randomizer(store[i].max, store[i].min);
-     /* add a new list item with hour: random number sold */
+    /* randomize a number between min and max and store it in cookiesSold for each store */
+        store[i].cookiesSold[j] = randomizer(store[i].max, store[i].min, store[i].avgCookies);
+    /* add a new list item with hour: random number sold */
         li =  li + '<li id="list">' + hours[j] + ": " + store[i].cookiesSold[j] + " customers" + '</li>';
 
     }
@@ -66,11 +68,11 @@ for(var i = 0; i < store.length; i++){ /* for each store */
     var totalCookies = 0; /* creating variable for total cookies sold */
     for(var k = 0; k < store[i].cookiesSold.length; k++){ /* for however many items are in the cookiesSold array */
 
-     /* add each value in the array to totalCookies */
+    /* add each value in the array to totalCookies */
         totalCookies = totalCookies + store[i].cookiesSold[k];
 
     }
- /* add a new list item with total cookies */
+/* add a new list item with total cookies */
     li = li + '<li id="list">' + "Total Cookies Sold: " + totalCookies + '</li>' + '<br>';
     store[i].total = totalCookies;
 
@@ -83,12 +85,12 @@ var data = document.getElementById('data');
 
 for(var s = 0; s < store.length; s++){
 
-  var tr = document.createElement('tr');
+var tr = document.createElement('tr');
 
-  var tdStore = document.createElement('td');
-  var storeLocation = store[s].name;
-  tdStore.innerHTML = storeLocation;
-  tr.appendChild(tdStore);
+var tdStore = document.createElement('td');
+var storeLocation = store[s].name;
+tdStore.innerHTML = storeLocation;
+tr.appendChild(tdStore);
 
 
     for(var k = 0; k < store[s].cookiesSold.length; k++){
