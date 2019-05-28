@@ -5,14 +5,17 @@
 var form = document.getElementById('newStore');
 form.addEventListener('submit', submitForm);
 
-function submitForm(event){
-    event.preventDefault();
-    if(event.target){
-        console.log('the event.target is ', event.target);
-        console.log('the event.target.name is ', event.target.name);
-        console.log('the event.target.min is ', event.target.min);
-        console.log('the event.target.max is ', event.target.max);
-        console.log('the event.target.average is ', event.target.average);
+function submitForm(form){
+    form.preventDefault();
+    if(form.target){
+
+        var newStore = new cookieStore(form.target.name, form.target.min, form.target.max, form.target.average);
+
+        // console.log('the form.target is ', form.target);
+        // console.log('the form.target.name is ', form.target.name);
+        // console.log('the form.target.min is ', form.target.min);
+        // console.log('the form.target.max is ', form.target.max);
+        // console.log('the form.target.average is ', form.target.average);
     }
 }
 
@@ -72,7 +75,7 @@ for(var i = 0; i < store.length; i++){ /* for each store */
     store[i].total = totalCookies;
 
     newLine.innerHTML = li;
-    hourly.appendChild(newLine);
+    //hourly.appendChild(newLine);
 }
 
 
