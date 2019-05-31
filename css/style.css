@@ -81,6 +81,7 @@ thead td, tbody td:first-child{
 }
 
 tbody td:first-child, tbody td:last-child{
+    text-transform: capitalize;
     text-decoration: underline;
 }
 
