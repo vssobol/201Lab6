@@ -3,22 +3,27 @@
 /*      Event Listener OPEN         */
 
 var form = document.getElementById('newStore');
-form.addEventListener('submit', submitForm);
-var newStore = [];
 
 function submitForm(form){
     event.preventDefault();
 
-    newStore = [event.target.name.value, event.target.min.value, event.target.max.value, event.target.average.value];
+    var newStore = [event.target.name.value, Number(event.target.min.value), Number(event.target.max.value), Number(event.target.average.value)];
 
-    console.log(newStore);
-    console.log(store);
+    new cookieStore(newStore[0], newStore[1], newStore[2], newStore[3]);
+
+    data.innerHTML = "";
+    totals.innerHTML = "";
+    tBody();
+    tFooter();
+
     event.target.name.value = null;
     event.target.min.value = null;
     event.target.max.value = null;
     event.target.average.value = null;
     
 }
+
+form.addEventListener('submit', submitForm);
 
 /*      Event Listener CLOSE        */
 
@@ -43,104 +48,93 @@ var seatac = new cookieStore("Seatac Airport", 3, 24, 1.2);
 var seattle = new cookieStore("Seattle Center", 11, 38, 3.7);
 var capitol = new cookieStore("Capitol Hill", 20, 38, 2.3);
 var alki = new cookieStore("Alki", 2, 16, 4.6);
-newStore = new cookieStore(newStore[0], newStore[1], newStore[2], newStore[3]);
 
 function randomizer(max, min, avgCookies){
-    return Math.ceil((Math.random() * (max - min + 1) + min) * avgCookies);
+    return Math.floor((Math.random() * (max - min + 1) + min) * avgCookies);
 }
 
-var hourly = document.getElementById('hourly');
+function tBody(){
 
-for(var i = 0; i < store.length; i++){ /* for each store */
+    for(var i = 0; i < store.length; i++){
 
-    var newLine = document.createElement('li'); /* start new line */
-    var li = '<p id="store">' + store[i].name + '</p>' + '<br>';
-
-    for(var j = 0; j < hours.length; j++){ /* for each hour */
-
-    /* randomize a number between min and max and store it in cookiesSold for each store */
-        store[i].cookiesSold[j] = randomizer(store[i].max, store[i].min, store[i].avgCookies);
-    /* add a new list item with hour: random number sold */
-        li =  li + '<li id="list">' + hours[j] + ": " + store[i].cookiesSold[j] + " customers" + '</li>';
-
+        for(var j = 0; j < hours.length; j++){
+            store[i].cookiesSold[j] = randomizer(store[i].max, store[i].min, store[i].avgCookies);
+        }
+        var totalCookies = 0;
+    
+        for(var k = 0; k < store[i].cookiesSold.length; k++){
+            totalCookies = totalCookies + store[i].cookiesSold[k];
+        }
+        store[i].total = totalCookies;
     }
 
-    var totalCookies = 0; /* creating variable for total cookies sold */
-    for(var k = 0; k < store[i].cookiesSold.length; k++){ /* for however many items are in the cookiesSold array */
+    var data = document.getElementById('data');
 
-    /* add each value in the array to totalCookies */
-        totalCookies = totalCookies + store[i].cookiesSold[k];
+    for(var s = 0; s < store.length; s++){
 
-    }
-/* add a new list item with total cookies */
-    li = li + '<li id="list">' + "Total Cookies Sold: " + totalCookies + '</li>' + '<br>';
-    store[i].total = totalCookies;
+        var tr = document.createElement('tr');
 
-    newLine.innerHTML = li;
-    //hourly.appendChild(newLine);
-}
+        var tdStore = document.createElement('td');
+        var storeLocation = store[s].name;
+        tdStore.innerHTML = storeLocation;
+        tr.appendChild(tdStore);
 
 
-var data = document.getElementById('data');
+        for(var k = 0; k < store[s].cookiesSold.length; k++){
 
-for(var s = 0; s < store.length; s++){
-
-var tr = document.createElement('tr');
-
-var tdStore = document.createElement('td');
-var storeLocation = store[s].name;
-tdStore.innerHTML = storeLocation;
-tr.appendChild(tdStore);
-
-
-    for(var k = 0; k < store[s].cookiesSold.length; k++){
-
-        var tdHourly = document.createElement('td');
-        var customers = store[s].cookiesSold[k];
-        tdHourly.innerHTML = customers;
-        tr.appendChild(tdHourly);
-
-    }
-
-    var tdTotal = document.createElement('td');
-    var daily = store[s].total;
-    tdTotal.innerHTML = daily;
-    tr.appendChild(tdTotal);
-
-    data.appendChild(tr);
-}
-
-var totals = document.getElementById('totals');
-
-var tr = document.createElement('tr');
-var tdZero = document.createElement('td');
-tdZero.innerHTML = "Totals";
-tr.appendChild(tdZero);
-
-for(var a = 0; a <= hours.length; a++){
-
-    var td = document.createElement('td');
-    var sum = 0;
-
-    for(var h = 0; h < store.length; h++){
-
-        if(a === hours.length){
-
-            sum = sum + store[h].total;
-            td.innerHTML = sum;
-            td.appendChild;
-
-        } else{
-
-            sum = sum + store[h].cookiesSold[a];
-            td.innerHTML = sum;
-            td.appendChild;
+            var tdHourly = document.createElement('td');
+            var customers = store[s].cookiesSold[k];
+            tdHourly.innerHTML = customers;
+            tr.appendChild(tdHourly);
 
         }
+
+        var tdTotal = document.createElement('td');
+        var daily = store[s].total;
+        tdTotal.innerHTML = daily;
+        tr.appendChild(tdTotal);
+
+        data.appendChild(tr);
+    }
+}
+
+function tFooter(){
+    var totals = document.getElementById('totals');
+
+    var tr = document.createElement('tr');
+    var tdZero = document.createElement('td');
+    tdZero.innerHTML = "Totals";
+    tr.appendChild(tdZero);
+
+    for(var a = 0; a <= hours.length; a++){
+
+        var td = document.createElement('td');
+        var sum = 0;
+
+        for(var h = 0; h < store.length; h++){
+
+            if(a === hours.length){
+
+                sum = sum + store[h].total;
+                td.innerHTML = sum;
+                td.appendChild;
+
+            } else{
+
+                sum = sum + store[h].cookiesSold[a];
+                td.innerHTML = sum;
+                td.appendChild;
+
+            }
+        }
+
+        tr.appendChild(td);
+
     }
 
-    tr.appendChild(td);
+    totals.appendChild(tr);
 
 }
 
-totals.appendChild(tr);
+tBody();
+tFooter();
