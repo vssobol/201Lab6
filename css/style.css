@@ -194,6 +194,59 @@ header{
     margin-right: 1.5em;
 }
 
+#quote *{
+    background-color: #dee7e7;
+}
+
+#quote{
+    background-color: #dee7e7;
+    border: medium solid #81b4b3;
+    padding-left: 25%;
+    padding-right: 20%;
+    padding-top: 1.5em;
+    padding-bottom: 4em;
+    margin-top: -.2em;
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+#quotetext{
+    float: left;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#quotetext h1{
+    color: #e15531;
+    font-weight: bolder;
+    font-size: 2em;
+}
+
+#quotetext p{
+    color: #81b4b3;
+    width: 40em;
+    font-weight: bold;
+    text-align: justify;
+    margin-right: 4em;
+}
+
+#quote button{
+    color: #e15531;
+    transition: 360ms;
+    font-weight: bolder;
+    font-size: 1em;
+    padding-top: .2em;
+    padding-bottom: .2em;
+    padding-left: 3em;
+    padding-right: 3em;
+    margin-top: 3em;
+}
+
+#quote button:hover{
+    cursor: pointer;
+    background-color: #81b4b3;
+    color: #dee7e7;
+}
+
 
 
 
