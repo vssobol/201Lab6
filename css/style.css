@@ -60,7 +60,7 @@ header{
 }
 
 #nav nav ul li{
-    background-color: #c9cdd6;
+    background-color: #a1bfb9;
     transition: 360ms;
     display: inline-block;
     border: medium solid #81b4b3;
@@ -82,7 +82,7 @@ header{
 }
 
 #products nav ul li{
-    background-color: #c9cdd6;
+    background-color: #a1bfb9;
     transition: 360ms;
     display: inline-block;
     border: medium solid #81b4b3;
@@ -225,6 +225,7 @@ header{
 }
 
 #sub nav ul li{
+    background-color: #a1bfb9;
     color: #e15531;
     transition: 360ms;
     display: inline-block;
