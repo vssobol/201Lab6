@@ -61,6 +61,7 @@ header{
 
 #nav nav ul li{
     background-color: #a1bfb9;
+    color: #dee7e7;
     transition: 360ms;
     display: inline-block;
     border: medium solid #81b4b3;
@@ -79,10 +80,12 @@ header{
 #nav nav ul li:hover{
     cursor: pointer;
     background-color: #81b4b3;
+    color: #e15531;
 }
 
 #products nav ul li{
     background-color: #a1bfb9;
+    color: #dee7e7;
     transition: 360ms;
     display: inline-block;
     border: medium solid #81b4b3;
@@ -99,6 +102,7 @@ header{
 #products nav ul li:hover{
     cursor: pointer;
     background-color: #81b4b3;
+    color: #e15531;
 }
 
 #title *{
@@ -226,7 +230,7 @@ header{
 
 #sub nav ul li{
     background-color: #a1bfb9;
-    color: #e15531;
+    color: #dee7e7;
     transition: 360ms;
     display: inline-block;
     border: medium solid #81b4b3;
@@ -242,6 +246,7 @@ header{
 #sub nav ul li:hover{
     cursor: pointer;
     background-color: #81b4b3;
+    color: #e15531;
 }
 
 #tab{
@@ -254,7 +259,7 @@ header{
 #tab img:first-child{
     float: left;
     border-radius: 2em;
-    border: medium dotted #e15531;
+    border: medium dotted #81b4b3;
     margin-right: 1.5em;
     height: 205px;
 }
