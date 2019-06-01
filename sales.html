@@ -10,66 +10,127 @@
     </head>
     <body>
         <header>
-            <img src="img/salmon.png" alt="Image of a salmon.">
-            <h1>Salmon Cookie Stand</h1>
+            <section id="nav">
+                <img src="img/salmon.png" alt="salmon logo">
+                <p>800-555-5555</p>
+                <nav>
+                    <ul>
+                        <li>Resources</li>
+                        <li>About Us</li>
+                        <li>Blog</li>
+                    </ul>
+                </nav>
+            </section>
+            <section id="products">
+                <nav>
+                    <ul>
+                        <li>Product 1</li>
+                        <li>Product 2</li>
+                        <li>Product 3</li>
+                        <li>Product 4</li>
+                        <li>Product 5</li>
+                        <li>Product 6</li>
+                        <li>Contact</li>
+                    </ul>
+                </nav>
+            </section>
         </header>
         <main>
-            <hr><br>
-
-            <form id="newStore" method="POST">
-                <fieldset>
-                    <label>Store Name :: </label>
-                    <input name="name" type="text" placeholder="1st and Pike">
-                    <br><br>
-                    <label>Minimum :: </label>
-                    <input name="min" type="number" min="0" placeholder="23">
-                    <label>customers per hour</label>
-                    <br><br>
-                    <label>Maximum :: </label>
-                    <input name="max" type="number" min="0" placeholder="65">
-                    <label>customers per hour</label>
-                    <br><br>
-                    <label>Average Cookies Bought :: </label>
-                    <input name="average" type="number" min="0" step="0.1" placeholder="6.3">
-                    <label>cookies per customer</label>
-                    <br><br>
-                    <button>submit</button>
-                </fieldset>
-            </form>
-
-            <br><hr><br>
-
-            <!-- <ul id=hourly>
-            </ul>
-            
-            <hr><br> -->
-
-            <table>
-                <thead>
-                    <td>Location</td>
-                    <td>6 am</td>
-                    <td>7 am</td>
-                    <td>8 am</td>
-                    <td>9 am</td>
-                    <td>10 am</td>
-                    <td>11 am</td>
-                    <td>12 pm</td>
-                    <td>1 pm</td>
-                    <td>2 pm</td>
-                    <td>3 pm</td>
-                    <td>4 pm</td>
-                    <td>5 pm</td>
-                    <td>6 pm</td>
-                    <td>7 pm</td>
-                    <td>8 pm</td>
-                    <td>Total</td>
-                </thead>
-                <tbody id="data"></tbody>
-                <tfoot id="totals"></tfoot>
-            </table>
+            <section id="title">
+                <nav>
+                    <ul>
+                        <li>Home</li>
+                        <li>></li>
+                        <li>Products</li>
+                        <li>></li>
+                        <li>Page Title</li>
+                    </ul>
+                </nav>
+                <table>
+                    <thead>
+                        <td>Location</td>
+                        <td>6 am</td>
+                        <td>7 am</td>
+                        <td>8 am</td>
+                        <td>9 am</td>
+                        <td>10 am</td>
+                        <td>11 am</td>
+                        <td>12 pm</td>
+                        <td>1 pm</td>
+                        <td>2 pm</td>
+                        <td>3 pm</td>
+                        <td>4 pm</td>
+                        <td>5 pm</td>
+                        <td>6 pm</td>
+                        <td>7 pm</td>
+                        <td>8 pm</td>
+                        <td>Total</td>
+                    </thead>
+                    <tbody id="data"></tbody>
+                    <tfoot id="totals"></tfoot>
+                </table>
+            </section>
+            <section id="quote">
+                <section id="quotetext">
+                    <h1>Add a Location</h1>
+                    <br>
+                    <form id="newStore" method="POST">
+                        <fieldset>
+                            <label>Store Name :: </label>
+                            <input name="name" type="text" placeholder="1st and Pike">
+                            <br><br>
+                            <label>Minimum :: </label>
+                            <input name="min" type="number" min="0" placeholder="23">
+                            <label>customers per hour</label>
+                            <br><br>
+                            <label>Maximum :: </label>
+                            <input name="max" type="number" min="0" placeholder="65">
+                            <label>customers per hour</label>
+                            <br><br>
+                            <label>Average Cookies Bought :: </label>
+                            <input name="average" type="number" min="0" step="0.1" placeholder="6.3">
+                            <label>cookies per customer</label>
+                        </fieldset>
+                    </form>
+                </section>
+                <input id="button" type="submit" form="newStore"></input>
+            </section>
         </main>
         <footer>
-            <br><p id="copyright">© Valerie Sobol 2019</p><br><br>
+            <section id="about">
+                <h3>About Us</h3>
+                <br>
+                <p>Lorem ipsum dolor sit amet, eu vis alia enim qualisque, quo vitae tamquam ne. Illud tantas decore ei quo, maiorum nusquam et vim. Duis quaestio perpetua vix cu. Blandit euripidis cum cu, oblique definiebas ei usu. Eum eu dolorum propriae mentitum, eum minim discere moderatius ea.</p>
+            </section>
+
+            <section id="misc">
+                <h3>The Latest From Our Blog</h3>
+                <br>
+                <p>Lorem ipsum dolor sit amet, eu vis alia enim qualisque, quo vitae tamquam ne. Illud tantas decore ei quo, maiorum nusquam et vim. Duis quaestio perpetua vix cu.</p>
+                <br>
+                <p>Blandit euripidis cum cu, oblique definiebas ei usu. Eum eu dolorum propriae mentitum, eum minim discere moderatius ea.</p>
+            </section>
+
+            <section id="contact">
+                <h3>Contact Us</h3>
+                <br>
+                <p>Lorem ipsum dolor sit amet, eu vis alia enim qualisque, quo vitae tamquam ne.</p>
+                <br>
+                <h3>Email Sign Up</h3>
+                <br>
+                <form>
+                    <fieldset>
+                        <input type="email" name="email" length="30">
+                        <button>Submit</button>
+                    </fieldset>
+                </form>
+            </section>
+
+            <p id="copyright">© Valerie Sobol 2019</p>
+
+            <section class="back">
+                <a href="index.html"><img src="img/chinook.png"></a>
+            </section>
         </footer>
 
         <script src="js/app.js"></script>
